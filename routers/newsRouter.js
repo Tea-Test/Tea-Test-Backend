@@ -8,6 +8,6 @@ router.post('/', newsController.createNews);
 router.get('/', newsController.getAllNews);
 router.get('/:no', newsController.getNewsByNo);
 router.put('/:no', newsController.updateNews);
-// router.delete('/:no', newsController.deleteNews);
+router.delete('/:no', newsController.deleteNews);
 
 module.exports = router;

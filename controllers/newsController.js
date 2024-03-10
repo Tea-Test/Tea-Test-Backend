@@ -62,20 +62,20 @@ exports.updateNews = async (req, res) => {
 };
 
 //delete a news
-// exports.deleteNews = async (req, res) => {
-//   try {
-//     const no = req.params.no;
-//     const news = await News.findOneAndUpdate({ no });
+exports.deleteNews = async (req, res) => {
+  try {
+    const no = req.params.no;
+    const n = await News.findOneAndDelete({ no });
 
-//     if (!news) {
-//       req.status(404).json({ message: "News not found" });
-//     } else {
-//       res.json({ message: "Deleted successfully" });
-//     }
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ message: "Error deleting news" });
-//   }
-// };
+    if (!n) {
+      req.status(404).json({ message: "News not found" });
+    } else {
+      res.json({ message: "Deleted successfully" });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Error deleting news" });
+  }
+};
 
 // There is a  error in delete news. that's why i commented out.***

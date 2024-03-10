@@ -21,24 +21,8 @@ exports.getAllProducts = async function (req, res, next){
     }
 };
 
-//get a product by its no
-// exports.getProductByNo = async (req, res) => {
-//     try {
-//         const no = req.params.no;
-//         const product = await Product.findOne({no});
 
-//         if (!product) {
-//             res.status(404).json({message: "Product not found by no "});
-//         } else {
-//             res.json(product);
-//         }
-//     } catch (error) {
-//         console.error(error);
-//         res.status(404).json({message: "Error fetching Product  by no"});
-//     }
-// }
-
-// get products by category(/product/sl)
+// get products by category(/product/sl) [cotergories=sl, st, en]
 exports.getProductByCategory = async (req, res) => {
     try {
         const category = req.params.category;
