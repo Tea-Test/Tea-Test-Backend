@@ -17,13 +17,14 @@ mongoose.connect(mongoUrl).then(()=>{
 const userRouter = require('./routers/userRouter');
 const newsRouter = require('./routers/newsRouter');
 const productRouter = require('./routers/productRouter');
+const gradeRouter = require('./routers/gradeRouter');
 
 
 //Routers
 app.use('/users', userRouter);
 app.use('/news', newsRouter);
 app.use('/products', productRouter);
-
+app.use('/grades', gradeRouter);
 
 
 //start server
